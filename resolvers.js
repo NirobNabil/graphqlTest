@@ -5,8 +5,8 @@ module.exports.resolvers = {
       posts: () => posts,
     },
     Post: {
-        // author: (parent) => 
         artists: (post) => {
+            // this function doesnt get called if i dont include artists in the request fields of post
             console.log(post);
             return artists.filter(artist => post.artistIds.indexOf(artist.id) != -1);
         }
